@@ -41,13 +41,13 @@ export default function Main() {
        </span>
     </div>
     <div className='init-container'>
-    {isLocationExist||isCategorySelected &&<div className='init' onClick={()=>{
+    {(isLocationExist||isCategorySelected) &&<div className='init' onClick={()=>{
       dispatch({type:"addLocation",payload:""});
       dispatch({type:"addMiddleCategory",payload:[]});
       }}>
       초기화</div>}
       {
-        isLocationExist||isCategorySelected && <img className='undo' src="prime_undo.png" alt="" /> 
+        (isLocationExist||isCategorySelected) && <img className='undo' src="prime_undo.png" alt="" /> 
       }
       
     </div>
