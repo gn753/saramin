@@ -1,6 +1,8 @@
 import React, { useEffect, useState, useRef } from "react";
 import mapInfoAPI from "../api/mapInfoAPI";
 import { useSelector, useDispatch } from "react-redux";
+import CompanyList from "./CompanyList";
+import MapHeader from "./MapHeader";
 
 export default function KakaoMap() {
   const dispatch = useDispatch();
@@ -13,16 +15,20 @@ export default function KakaoMap() {
   }, []);
 
   return (
-    <div className="map_wrap">
-      <div
-        id="map"
-        style={{
-          width: "400px",
-          height: "400px",
-          position: "relative",
-          overflow: "hidden",
-        }}
-      ></div>
-    </div>
+    <>
+      <MapHeader />
+      <div className="map_wrap">
+        <div
+          id="map"
+          style={{
+            width: "100%",
+            height: "360px",
+            position: "relative",
+            overflow: "hidden",
+          }}
+        ></div>
+        <CompanyList />
+      </div>
+    </>
   );
 }

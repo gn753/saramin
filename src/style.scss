@@ -1,56 +1,263 @@
 //모든 css 저장소
-.App{
-  width:390px;
-  height:844px;
+body {
+  font-size: 14px;
   font-family: Pretendard;
-  padding:21px;
-  border:1px gray solid;
+  font-style: normal;
+  font-weight: normal;
+}
+.nav-container {
+  display: flex;
+  align-items: center;
+}
+.main {
+  width: 390px;
+  height: 844px;
+  font-family: Pretendard;
+  padding: 21px;
   position: relative;
   margin: auto;
-  margin-top:20px;
+  margin-top: 20px;
   border-radius: 30px;
 }
 
-.confirm-btn{
+.confirm-btn {
   display: flex;
   justify-content: center;
-  align-items:center;
+  align-items: center;
 
-  background: #C0C0C0;
+  background: #c0c0c0;
   border-radius: 6px;
   width: 350px;
   height: 56px;
   position: absolute;
   bottom: 30px;
-  left:9%;
+  left: 9%;
 
   font-style: normal;
   font-weight: 600;
   font-size: 16px;
   line-height: 28px;
-  color: #FFFFFF;
+  color: #ffffff;
 }
-.confirm-btn.active{
-  background: #5275E7;
+.confirm-btn.active {
+  background: #5275e7;
   cursor: pointer;
 }
-a{
-    text-decoration: none;
-    color:inherit;
+a {
+  text-decoration: none;
+  color: inherit;
 }
-.location-search-text{
+.location-search-text {
   font-style: normal;
   font-weight: 600;
   font-size: 18px;
   line-height: 30px;
-  margin-left:165px;
-  margin-bottom:30px;
+  margin-left: 165px;
+  margin-bottom: 30px;
 }
-.back{
-  float:left;
-  margin-top:5px;
+.back {
+  float: left;
+  margin-top: 5px;
 }
-ul{
-  padding:0;
-  list-style:none;
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+.company-list {
+  padding-left: 20px;
+  padding-right: 20px;
+  box-shadow: 2px 4px 16px rgba(0, 0, 0, 0.25);
+  border-radius: 10px 10px 0px 0px;
+}
+.company-list__inner {
+  padding-bottom: 17px;
+}
+.company-item {
+  display: flex;
+  height: 130px;
+  align-items: center;
+  .company-item__info__title {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 28px;
+    margin: 0;
+  }
+  .company-item__info__name {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 26px;
+  }
+  figure {
+    width: 96px;
+    height: 96px;
+    background-image: url("./../public/company-figure.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0;
+    border-radius: 6px;
+    margin-right: 18px;
+  }
+  .sales {
+    color: #5275e7;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 26px;
+  }
+
+  p {
+    color: #888888;
+    margin: 0;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 26px;
+  }
+}
+.control-menu {
+  position: relative;
+  .control-menu__toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    height: 34px;
+    border: 1px solid #5275e7;
+    box-sizing: border-box;
+    border-radius: 6px;
+    color: #5275e7;
+    cursor: pointer;
+  }
+  .control-list {
+    position: absolute;
+    z-index: 10;
+    display: flex;
+    width: 320px;
+    top: 50px;
+    flex-wrap: wrap;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.137);
+    border-radius: 10px;
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+  .control-list__item {
+    position: relative;
+    width: 50%;
+    height: 34px;
+    font-size: 14px;
+    line-height: 34px;
+    border-bottom: 1px solid #e5e5e5;
+    border-top: none;
+    box-sizing: border-box;
+    background-color: #fff;
+    color: #666666;
+    padding-left: 34px;
+    cursor: pointer;
+  }
+  .control-list__item:nth-child(odd) {
+    border-right: 1px solid #e5e5e5;
+  }
+  .control-list__item:nth-child(1) {
+    color: #5275e7;
+  }
+  .control-list__item::before {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    left: calc(50% - 10px / 2 - 59px);
+    top: 12px;
+    border-radius: 50%;
+  }
+  .control-list__item:nth-child(2)::before {
+    content: "";
+    background: #eef1fd;
+  }
+  .control-list__item:nth-child(3)::before {
+    background: #bac8f5;
+  }
+  .control-list__item:nth-child(4)::before {
+    background: #97acf1;
+  }
+  .control-list__item:nth-child(5)::before {
+    background: #7591ec;
+  }
+  .control-list__item:nth-child(6)::before {
+    background: #7591ec;
+  }
+  .control-list__item:nth-child(7)::before {
+    background: #5275e7;
+  }
+  .control-list__item:nth-child(8)::before {
+    background: #2552e7;
+  }
+  .control-list__item:nth-child(9)::before {
+    background: #e5e5e5;
+  }
+}
+
+.setting {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+}
+.list-view {
+  color: #888888;
+  font-family: Pretendard;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 28px;
+  cursor: pointer;
+}
+
+.MapHeader {
+  padding: 0 22px;
+  margin-bottom: 14px;
+
+  .currentLocation {
+    font-style: normal;
+    font-size: 14px;
+    line-height: 26px;
+    /* identical to box height, or 186% */
+    color: #000000;
+    font-weight: 400;
+  }
+  h2 {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 36px;
+    margin: 0;
+    margin-bottom: 10px;
+  }
+  .job-tag {
+    display: flex;
+    div {
+      cursor: pointer;
+    }
+    .add-btn {
+      width: 34px;
+      height: 34px;
+      background-image: url("../public/추가버튼.png");
+      background-size: cover;
+      margin-right: 4px;
+    }
+    .tag-item {
+      width: 113px;
+      height: 34px;
+      background-image: url("../public/버튼.png");
+      background-size: cover;
+      margin-right: 4px;
+    }
+    .tag-item-02 {
+      width: 113px;
+      height: 34px;
+      background-image: url("../public/버튼\ \(1\).png");
+      background-size: cover;
+    }
+  }
 }
