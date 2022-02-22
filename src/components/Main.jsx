@@ -24,27 +24,34 @@ export default function Main() {
     <div className="job">
       <span className="subject-text">직무</span>
       <span className={`select-text ${isCategorySelected ?"active":""}`}>
-      <Link to="/jobs">
       {isCategorySelected?title:"선택해주세요"}
-        </Link>
+      <Link to="/jobs">
       <img className='right-arrow' src="right_arrow.png" alt="" />
+        </Link>
         </span>
     </div>
     <div className="location">
     <span className="subject-text">지역</span>
     <span className={`select-text ${isLocationExist ?"active":""}`}>
-      <Link to="/location">
       {isLocationExist?state.locationReducer.map((e)=>(e)):"선택해주세요"}
-      </Link>
+      <Link to="/location">
       <img className='right-arrow' src="right_arrow.png" alt="" />
+      </Link>
       
        </span>
     </div>
-    {isLocationExist&&isCategorySelected ?<div className='init' onClick={()=>{
+    <div className='init-container'>
+    {isLocationExist||isCategorySelected &&<div className='init' onClick={()=>{
       dispatch({type:"addLocation",payload:""});
       dispatch({type:"addMiddleCategory",payload:[]});
       }}>
-      <img src="prime_undo.png" alt="" /> 초기화</div>:""}
+      초기화</div>}
+      {
+        isLocationExist||isCategorySelected && <img className='undo' src="prime_undo.png" alt="" /> 
+      }
+      
+    </div>
+ 
     <div className={`confirm-btn ${isLocationExist&&isCategorySelected ?"active": ""}`}>
       검색하기
     </div>
@@ -60,13 +67,21 @@ export default function Main() {
     }
     .init{
       position:absolute;
-      bottom:400px;
+      bottom:421px;
       right:50px;
       font-style: normal;
       font-weight: normal;
       font-size: 14px;
       line-height: 26px;
       color: #888888;
+    }
+    .undo{
+      position:absolute;
+      bottom:425px;
+      right:90px;
+    }
+    .init-container{
+      cursor:pointer;
     }
     .top-text{
       font-style: normal;
