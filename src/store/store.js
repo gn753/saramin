@@ -1,9 +1,8 @@
-import { configureStore,combineReducers } from "@reduxjs/toolkit";
+import { configureStore,combineReducers,createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 
 
-
-function locationReducer(state = "", action){
+function locationReducer(state = [], action){
   if (action.type === 'addLocation') {
     state =[];
     state.push(action.payload);
@@ -30,6 +29,9 @@ function locationReducer(state = "", action){
       return state
     }
   }
+
+
+  
   const rootReducer = combineReducers({
     locationReducer,mainCategoryReducer,middleCategoryReducer
   })

@@ -16,7 +16,7 @@ export default function Location() {
   },[inputValue]); 
 
 
-  // 다음API 사용할경우 사용state
+  // // 다음API 사용할경우 사용state
   // const [address, setAddress] = useState(''); // 주소
   // const [addressDetail, setAddressDetail] = useState(''); // 상세주소
   // const [isOpenPost, setIsOpenPost] = useState(false);

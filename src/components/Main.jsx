@@ -1,9 +1,12 @@
 import React from 'react'
+import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import { Link} from 'react-router-dom';
 export default function Main() {
   const state = useSelector((e)=>e);
-  const isLocationExist = state.locationReducer.length>0;
+  const dispatch =useDispatch();
+  const isLocationExist = state.locationReducer.length>0 && state.locationReducer[0]!=='';
+  console.log(state.locationReducer)
   const isCategorySelected = state.middleCategoryReducer.length>0;
   const title = state.middleCategoryReducer.length>1 
   ? `${state.middleCategoryReducer[0]} 외 ${state.middleCategoryReducer.length-1}개`
@@ -37,6 +40,11 @@ export default function Main() {
       
        </span>
     </div>
+    {isLocationExist&&isCategorySelected ?<div className='init' onClick={()=>{
+      dispatch({type:"addLocation",payload:""});
+      dispatch({type:"addMiddleCategory",payload:[]});
+      }}>
+      <img src="prime_undo.png" alt="" /> 초기화</div>:""}
     <div className={`confirm-btn ${isLocationExist&&isCategorySelected ?"active": ""}`}>
       검색하기
     </div>
@@ -46,10 +54,19 @@ export default function Main() {
       margin:0;
     }
     .logo{
-  
       position: absolute;
       left:9%;
       top:11%;
+    }
+    .init{
+      position:absolute;
+      bottom:400px;
+      right:50px;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 26px;
+      color: #888888;
     }
     .top-text{
       font-style: normal;
@@ -105,7 +122,7 @@ export default function Main() {
       align-items:center;
       position: absolute;
       left:9%;
-      top:29%;
+      top:32%;
 
     }
     .location{
@@ -118,7 +135,7 @@ export default function Main() {
       display:flex;
       align-items:center;
       position: absolute;
-      top:39%;
+      top:41%;
       left:9%;
     }
     
