@@ -1,6 +1,8 @@
 import { markerdata } from "./dummyData2";
 const { kakao } = window;
 const mapInfoAPI = () => {
+
+  
   let container = document.getElementById("map");
   let options = {
     center: new kakao.maps.LatLng(37.624915253753194, 127.15122688059974),

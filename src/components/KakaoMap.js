@@ -1,9 +1,14 @@
 import React, { useEffect, useState, useRef } from "react";
 import mapInfoAPI from "../api/mapInfoAPI";
+import { useSelector, useDispatch } from "react-redux";
 
 export default function KakaoMap() {
+  const dispatch = useDispatch();
+  const data = useSelector((state) => state);
+
   useEffect(() => {
-    // addressFetch();
+    dispatch({ type: "addLocation", payload: "" });
+    console.log(data.locationReducer[0], "data-location");
     mapInfoAPI();
   }, []);
 
