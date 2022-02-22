@@ -29,6 +29,7 @@ function App() {
     <Route path="/" element={<Main/>}></Route>
     <Route path="/location" element={<Location/>}></Route>
     <Route path="/jobs" element={<Jobs/>}></Route>
+    <Route path="/maps" element={<KakaoMap/>}></Route>
     </Routes>
     
   </div>;
