@@ -1,10 +1,11 @@
 import React from 'react'
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
-import { Link} from 'react-router-dom';
+import { Link,useNavigate} from 'react-router-dom';
 export default function Main() {
   const state = useSelector((e)=>e);
   const dispatch =useDispatch();
+  const navigate = useNavigate();
   const isLocationExist = state.locationReducer.length>0 && state.locationReducer[0]!=='';
   console.log(state.locationReducer)
   const isCategorySelected = state.middleCategoryReducer.length>0;
@@ -52,7 +53,7 @@ export default function Main() {
       
     </div>
  
-    <div className={`confirm-btn ${isLocationExist&&isCategorySelected ?"active": ""}`}>
+    <div className={`confirm-btn ${isLocationExist&&isCategorySelected ?"active": ""}`} onClick={()=>{navigate("/maps")}}>
       검색하기
     </div>
     
