@@ -1,1 +1,56 @@
 //모든 css 저장소
+.App{
+  width:390px;
+  height:844px;
+  font-family: Pretendard;
+  padding:21px;
+  border:1px gray solid;
+  position: relative;
+  margin: auto;
+  margin-top:20px;
+  border-radius: 30px;
+}
+
+.confirm-btn{
+  display: flex;
+  justify-content: center;
+  align-items:center;
+
+  background: #C0C0C0;
+  border-radius: 6px;
+  width: 350px;
+  height: 56px;
+  position: absolute;
+  bottom: 30px;
+  left:9%;
+
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 28px;
+  color: #FFFFFF;
+}
+.confirm-btn.active{
+  background: #5275E7;
+  cursor: pointer;
+}
+a{
+    text-decoration: none;
+    color:inherit;
+}
+.location-search-text{
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 30px;
+  margin-left:165px;
+  margin-bottom:30px;
+}
+.back{
+  float:left;
+  margin-top:5px;
+}
+ul{
+  padding:0;
+  list-style:none;
+}
